@@ -14,6 +14,10 @@ Ask for lesson plan for some concept and receive a lesson plan from the llm.
 - Use the relevant vectors to construct the prompt. Vectors have metadata that maps back to plaintext of the origin users query and instructions.
 - Send to llm and return the result
 
+# API 
+- Using Flask for api endpoint "Planner"
+- Using Flask over FastAPI as deployment platform only works with wsgi whereas FastAPI is asgi
+
 # Why?
 - Efficiently sets up a plan for the user. The llm will provide a more taliored lesson plan to the user based on their prior knowledge.
 - The goal of this is to save time for the user so that they don't need to keep supplying the llm with more context.
