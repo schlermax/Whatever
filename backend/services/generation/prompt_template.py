@@ -46,4 +46,3 @@ Generate a comprehensive and tailored lesson plan based on the above context and
 
 
 __all__ = ["construct_rag_prompt"]
-
