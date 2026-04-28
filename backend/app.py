@@ -5,6 +5,7 @@ import numpy as np
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request
 
+from middleware.cors import setup_cors
 from services.generation.chat_model import generate_response, get_chat_model
 from services.generation.prompt_template import construct_rag_prompt
 from services.ingestion.document_loader import load_text_documents
@@ -21,6 +22,9 @@ load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
+
+# Setup CORS
+setup_cors(app)
 
 # Global state for RAG pipeline
 _vector_store: InMemoryVectorStore | None = None
