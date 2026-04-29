@@ -104,6 +104,11 @@ def generate_lesson_plan(
 def init_rag_pipeline():
     """Initialize the RAG pipeline on app startup."""
     global _vector_store, _embeddings_model
+    
+    if _vector_store is not None and _embeddings_model is not None:
+        print("RAG pipeline already initialized, skipping...")
+        return
+    
     print("Initializing RAG pipeline...")
     _vector_store = run_ingestion_pipeline()
     _embeddings_model = get_cohere_embeddings()
